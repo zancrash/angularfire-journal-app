@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam:400,700,300);
+
+html{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body{
+  background-color: #E6E6E6;
+}
+
+ul{
+  list-style: none;
+}
+
+#grplist:hover{
+  color: grey;
+  cursor: default;
+}
+
+.currentGroup{
+  color: #0099FF;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 70px;
+  margin-top: 50px;
+  font-size: 40px;
+  font-family: kalam;
+  font-weight: bold;
+}
+
+#authForm{
+  display: block;
+  text-align: center;
+}
+
+#authForm form{
+  display: inline-block;
+}
+
+#authForm form input{
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+#authForm button{
+  float: left;
+  
+}
+
+#authForm #primary{
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #00BFFF;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  
+}
+
+#authForm #primary:hover{
+  background-color: #00B0EB;
+}
+
+#authForm #secondary{
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #ADADAD;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#authForm #secondary:hover{
+  background-color: #A1A1A1;
+}

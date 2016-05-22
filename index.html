@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>entry2</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <html lang="en" ng-app="diaryApp">
+
+<head>
+  <meta name="viewport" content="initial-scale=1"/>
+</head>
+
+<body ng-controller="GroupCtrl">
+
+  <nav>
+    <button ng-click="logout()" ng-show="loggedIn">Log out</button>
+  </nav>
+
+  <div ng-show="loggedIn">
+    <input placeholder="add group" type="text" id="groupinput" ng-model="groupname" required></input><button ng-click="addGroup()">add</button>
+    <p>{{selectedgroup}}</p>
+
+    <ul>
+      <li ng-repeat="groupname in mygroups" ng-click="selectGroup(groupname, selectedgroup)" id="grplist">{{groupname.group}} <button ng-click="removeGroup(groupname, myentries, entry, $index)" ng-if="groupname">X</button></li>
+    </ul>
+  </div>
+
+  <div>
+    <form ng-show="selectedgroup">
+      <input placeholder="title" type="text" ng-model="entrytitle">
+      </input><br/>
+      <textarea placeholder="entry" type="text" ng-model="entrycontent"></textarea><br/>
+      <button ng-click="addEntry()">add</button>
+
+      <input type "search" ng-model="q" placeholder="filter entries..." />
+    </form>
+    <ul>
+      <li ng-repeat="entry in myentries| filter:q as results" ng-show="entry.group==selectedgroup">
+        <h3>{{entry.title}}</h3>
+        <p>{{entry.content}}</p>
+        <p>{{entry.timestamp}}</p>
+        <p>{{entry.group}}</p>
+        <button ng-click="removeEntry(entry)">delete</button>
+      </li>
+    </ul>
+  </div>
+
+<h1 ng-hide="loggedIn">{{authHead}}</h1>
+
+  <div id="authForm">
+    <form ng-hide="loggedIn">
+      <input placeholder="Email" ng-model="user.email" type="email" required></input><br/>
+      <input placeholder="Password" ng-model="user.password" type="password" required></input><br/>
+      <button ng-click="login()" id="primary">{{buttonMessage}}</button>
+      <button ng-click="newMember()" id="secondary">{{memberMessage}}</button>
+    </form>
+  </div>
+
+  <!--dependencies-->
+  <!--angular-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <!--firebase-->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <!--angularfire-->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+</body>
+
+</html>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
