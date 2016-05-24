@@ -54,13 +54,11 @@ app.controller('GroupCtrl', ['$scope', '$firebaseAuth', 'fbGroups', 'fbMsg', 'au
 
   $scope.removeGroup = function(groupname, myentries, entry, $index) {
     $scope.mygroups.$remove(groupname),
-      $scope.myentries.length = 0
+      //$scope.myentries.length = 0
     $scope.selectedgroup = null;
-
-    /*$scope.myentries.$remove(entry.group)*/
   }
 
-  $scope.addEntry = function() {
+  $scope.addEntry = function(selectedgroup) {
     $scope.myentries.$add({
       title: $scope.entrytitle,
       content: $scope.entrycontent,
@@ -68,6 +66,10 @@ app.controller('GroupCtrl', ['$scope', '$firebaseAuth', 'fbGroups', 'fbMsg', 'au
       group: $scope.selectedgroup
     });
     $scope.entry = "";
+    
+    $scope.addChild = function(entry, selectedgroup){      $scope.element(selectedgroup).append(entry);
+    }
+    $scope.addChild()
   };
 
   $scope.removeEntry = function(entry) {
