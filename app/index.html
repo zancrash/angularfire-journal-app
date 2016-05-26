@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="diaryApp">
   <head>
     <meta charset="UTF-8">
     <title>entry2</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="initial-scale=1"/>
   </head>
-
-  <body>
-
-    <html lang="en" ng-app="diaryApp">
-
-<head>
-  <meta name="viewport" content="initial-scale=1"/>
-</head>
 
 <body ng-controller="GroupCtrl">
 
-  <nav>
-    <button ng-click="logout()" ng-show="loggedIn">Log out</button>
-  </nav>
+<nav>
+<button ng-click="logout()" ng-show="loggedIn">Log out</button>
+</nav>
 
-  <div ng-show="loggedIn">
-    <input placeholder="add group" type="text" id="groupinput" ng-model="groupname" required></input><button ng-click="addGroup()">add</button>
-    <p>{{selectedgroup}}</p>
+<div ng-show="loggedIn">
+
+<input placeholder="add group" type="text" id="groupinput" ng-model="groupname" required></input>
+<button ng-click="addGroup()">add</button>
+<p>{{selectedgroup}}</p>
 
     <ul>
       <li ng-repeat="groupname in mygroups" ng-click="selectGroup(groupname, selectedgroup)" id="grplist">{{groupname.group}} <button ng-click="removeGroup(groupname, myentries, entry, $index)" ng-if="groupname">X</button></li>
@@ -67,9 +62,10 @@
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <!--angularfire-->
   <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+  <script src="js/index.js"></script>
 </body>
 
 </html>
-<script src="js/index.js"></script>
-</body>
-</html>
+
+
