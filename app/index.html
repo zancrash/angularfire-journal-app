@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="diaryApp">
+
   <head>
     <meta charset="UTF-8">
     <title>entry2</title>
@@ -7,11 +8,11 @@
     <meta name="viewport" content="initial-scale=1"/>
   </head>
 
-<body ng-controller="GroupCtrl">
+<header ng-show="loggedIn">
+<button ng-click="logout()">Log out</button>
+</header>
 
-<nav>
-<button ng-click="logout()" ng-show="loggedIn">Log out</button>
-</nav>
+<body ng-controller="GroupCtrl">
 
 <div ng-show="loggedIn">
 
@@ -50,8 +51,8 @@
     <form ng-hide="loggedIn">
       <input placeholder="Email" ng-model="user.email" type="email" required></input><br/>
       <input placeholder="Password" ng-model="user.password" type="password" required></input><br/>
-      <button ng-click="login()" id="primary">{{buttonMessage}}</button>
-      <button ng-click="newMember()" id="secondary">{{memberMessage}}</button>
+      <button ng-click="login()" id="primary">Login/Register</button>
+      <!--<button ng-click="newMember()" id="secondary">{{memberMessage}}</button>-->
     </form>
   </div>
 

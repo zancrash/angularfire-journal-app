@@ -6,6 +6,32 @@ html{
 
 body{
   background-color: #E6E6E6;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  background-color: #0099FF;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+header button{
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0099FF;
+  border-color: white;
+  border-style: solid;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+header button:hover{
+  background-color: white;
+  color: #0099FF;
 }
 
 ul{
@@ -15,10 +41,6 @@ ul{
 #grplist:hover{
   color: gray;
   cursor: default;
-}
-
-.currentGroup{
-  color: #0099FF;
 }
 
 h1{
@@ -47,13 +69,17 @@ h1{
   padding: 5px;
 }
 
+#authForm p{
+  font-size: 15px;
+}
+
 #authForm button{
   float: left;
   
 }
 
 #authForm #primary{
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
   background-color: #00BFFF;
@@ -70,7 +96,7 @@ h1{
 }
 
 #authForm #secondary{
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
   background-color: #ADADAD;
