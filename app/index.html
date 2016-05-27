@@ -14,11 +14,11 @@
 
 <body ng-controller="GroupCtrl">
 
-<div ng-show="loggedIn">
+<div ng-show="loggedIn" id="sects">
 
 <input placeholder="add group" type="text" id="groupinput" ng-model="groupname" required></input>
 <button ng-click="addGroup()">add</button>
-<p>{{selectedgroup}}</p>
+
 
     <ul>
       <li ng-repeat="groupname in mygroups" ng-click="selectGroup(groupname, selectedgroup)" id="grplist">{{groupname.group}} <button ng-click="removeGroup(groupname, myentries, entry, $index)" ng-if="groupname">X</button></li>
@@ -32,14 +32,17 @@
       <textarea placeholder="entry" type="text" ng-model="entrycontent"></textarea><br/>
       <button ng-click="addEntry()">add</button>
 
-      <input type "search" ng-model="q" placeholder="filter entries..." />
+      
     </form>
-    <ul>
+
+    <h1 id="currentGroup">{{selectedgroup}}</h1>
+    <input type "search" ng-model="q" placeholder="filter entries..." id="filterBar" ng-show="selectedgroup"/>
+
+    <ul id="entryList">
       <li ng-repeat="entry in myentries| filter:q as results" ng-show="entry.group==selectedgroup">
         <h3>{{entry.title}}</h3>
         <p>{{entry.content}}</p>
         <p>{{entry.timestamp}}</p>
-        <p>{{entry.group}}</p>
         <button ng-click="removeEntry(entry)">delete</button>
       </li>
     </ul>

@@ -111,3 +111,26 @@ h1{
 #authForm #secondary:hover{
   background-color: #A1A1A1;
 }
+
+#sects{
+  display: inline-block;
+}
+
+#currentGroup{
+  text-align: center;
+  font-family: Kalam;
+  margin-bottom: 20px;
+}
+
+#filterBar{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 55px;
+}
+
+#entryList li{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+}
