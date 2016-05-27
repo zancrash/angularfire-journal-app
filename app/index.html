@@ -40,7 +40,7 @@
 
     <ul id="entryList">
       <li ng-repeat="entry in myentries| filter:q as results" ng-show="entry.group==selectedgroup">
-        <h3>{{entry.title}}</h3>
+        <h2>{{entry.title}}</h2>
         <p>{{entry.content}}</p>
         <p>{{entry.timestamp}}</p>
         <button ng-click="removeEntry(entry)">delete</button>
